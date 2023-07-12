@@ -1,0 +1,7 @@
+#Fri Jul 07 16:50:16 IST 2023
+base.1=/Users/iosdeveloper2/Documents/GitHub/Fastlane_App/android/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/2/classes.dex
+path.1=2/classes.dex
+base.0=/Users/iosdeveloper2/Documents/GitHub/Fastlane_App/android/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=0/classes.dex
