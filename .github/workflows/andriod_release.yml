@@ -2,7 +2,7 @@ name: Build and deploy Android release
 on:
   push:
     tags:
-      - 'master'
+      - 'dev_fastlane'
 jobs:
   testFlight-build:
     name: android-beta-build
