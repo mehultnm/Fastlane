@@ -24,7 +24,12 @@ platform :android do
 
   end
 
-
+lane :beta do
+    setup_ci if ENV['CI']
+    match(type: 'playstore')
+    build_app
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+  end
 
 
     desc "My awesome app"
@@ -39,9 +44,15 @@ platform :android do
             release_notes: "Lots of amazing new features to test out!"
         )
   end
-    desc "Release for the Android beta"
-    lane :beta do
-      gradle(task: ‘clean’, project_dir: ‘android/gradle’)
-      gradle(task: 'assemble', build_type: 'Release', project_dir: './android/')
-    end
+  push_to_git_remote(
+    remote: "origin",
+    local_branch: "dev_fastlane",
+    remote_branch: "dev_fastlane",
+    force: true,
+    force_with_lease: true,
+    tags: false,
+    no_verify: true,
+    set_upstream: true
+  )
+
 end
